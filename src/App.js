@@ -4,6 +4,7 @@ import SampleComponent from './components/SampleComponent'
 import './App.css';
 import TemplateExpressions from './components/TemplateExpressions';
 import ChildComponent from './components/ChildComponent';
+import EventClick from './components/EventClick';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <SampleComponent/>
         <TemplateExpressions/>
         <ChildComponent/>
+        <EventClick/>
     </div>
   );
 }
