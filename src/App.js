@@ -1,5 +1,6 @@
-import logo from './logo.svg';
+import whatsappImg from './assets/whatsapp.png';
 import SampleComponent from './components/SampleComponent'
+
 
 import './App.css';
 import TemplateExpressions from './components/TemplateExpressions';
@@ -14,6 +15,9 @@ function App() {
         <TemplateExpressions/>
         <ChildComponent/>
         <EventClick/>
+        <img src='/instagram.png' alt='Image at Public Folder' />
+        <img src={whatsappImg} alt='Image at Assets Folder' />
+
     </div>
   );
 }
