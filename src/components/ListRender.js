@@ -7,12 +7,14 @@ const ListRender = () => {
   return (
     <div>ListRender
         <ul>    
-            {list.map((item)=>(
-                <li>{item}</li>
+            {/* bad practice use list index, prefer unique ids generated */}
+            {list.map((item, i)=>(
+                <li key={i}>{item}</li>
                 ))}
         </ul>
     </div>
   )
+
 }
 
 export default ListRender
