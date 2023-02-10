@@ -3,6 +3,7 @@ import SampleComponent from './components/SampleComponent'
 
 import './App.css';
 import TemplateExpressions from './components/TemplateExpressions';
+import ChildComponent from './components/ChildComponent';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <h1>Welcome React</h1>
         <SampleComponent/>
         <TemplateExpressions/>
+        <ChildComponent/>
     </div>
   );
 }
