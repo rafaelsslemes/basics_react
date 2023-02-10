@@ -6,6 +6,7 @@ import './App.css';
 import TemplateExpressions from './components/TemplateExpressions';
 import ChildComponent from './components/ChildComponent';
 import EventClick from './components/EventClick';
+import DataByHook from './components/DataByHook';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <EventClick/>
         <img src='/instagram.png' alt='Image at Public Folder' />
         <img src={whatsappImg} alt='Image at Assets Folder' />
+        <DataByHook/>
 
     </div>
   );
