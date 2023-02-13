@@ -13,6 +13,7 @@ import ReceiveProperties from './components/ReceiveProperties';
 import DestructProperties from './components/DestructProperties';
 import ListIterated from './components/ListIterated';
 import FragmentExample from './components/FragmentExample';
+import WrapComponent from './components/WrapComponent';
 
 function App() {
 
@@ -39,6 +40,10 @@ function App() {
         <DestructProperties name='Tomas' age={40} title='Software Developer'/>
         <ListIterated people={employees}/>
         <FragmentExample/>
+        <WrapComponent>
+          <h2>Information 1</h2>
+          <h2>Information 2</h2>
+        </WrapComponent>
     </div>
   );
 }
