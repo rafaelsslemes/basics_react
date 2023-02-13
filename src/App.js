@@ -40,7 +40,7 @@ function App() {
         <DestructProperties name='Tomas' age={40} title='Software Developer'/>
         <ListIterated people={employees}/>
         <FragmentExample/>
-        <WrapComponent>
+        <WrapComponent title='Data Information'>
           <h2>Information 1</h2>
           <h2>Information 2</h2>
         </WrapComponent>

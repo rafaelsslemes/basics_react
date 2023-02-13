@@ -1,10 +1,10 @@
 import React from 'react'
 
-const WrapComponent = ({children}) => {
+const WrapComponent = ({children, title}) => {
   return (
     <div>
         <h1>
-            Wrap Header
+            Wrap Header of <i>{title}</i>
         </h1>
         {/* All content inside tags */}
             {children}
