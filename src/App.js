@@ -9,6 +9,7 @@ import EventClick from './components/EventClick';
 import DataByHook from './components/DataByHook';
 import ListRender from './components/ListRender';
 import CondictionalRender from './components/CondictionalRender';
+import ReceiveProperties from './components/ReceiveProperties';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <DataByHook/>
         <ListRender/>
         <CondictionalRender/>
+        <ReceiveProperties name='Rafael'/>
     </div>
   );
 }
