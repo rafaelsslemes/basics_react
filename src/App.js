@@ -8,6 +8,7 @@ import ChildComponent from './components/ChildComponent';
 import EventClick from './components/EventClick';
 import DataByHook from './components/DataByHook';
 import ListRender from './components/ListRender';
+import CondictionalRender from './components/CondictionalRender';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <img src={whatsappImg} alt='Image at Assets Folder' />
         <DataByHook/>
         <ListRender/>
+        <CondictionalRender/>
     </div>
   );
 }
