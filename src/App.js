@@ -10,8 +10,17 @@ import DataByHook from './components/DataByHook';
 import ListRender from './components/ListRender';
 import CondictionalRender from './components/CondictionalRender';
 import ReceiveProperties from './components/ReceiveProperties';
+import DestructProperties from './components/DestructProperties';
+import ListIterated from './components/ListIterated';
 
 function App() {
+
+  const employees = [
+    {name:'Josh', age: 25, title: "Developer Jr"},
+    {name:'Amanda', age: 30, title: "Developer Pl"},
+    {name:'Judith', age: 35, title: "Developer Sr"},
+  ];
+
   return (
     <div className="App">
         <h1>Welcome React</h1>
@@ -24,7 +33,10 @@ function App() {
         <DataByHook/>
         <ListRender/>
         <CondictionalRender/>
-        <ReceiveProperties name='Rafael'/>
+        <ReceiveProperties name='Peter'/>
+        <DestructProperties name='John' age={30} title='Software Architect'/>
+        <DestructProperties name='Tomas' age={40} title='Software Developer'/>
+        <ListIterated people={employees}/>
     </div>
   );
 }
