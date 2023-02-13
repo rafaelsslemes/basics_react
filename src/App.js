@@ -12,6 +12,7 @@ import CondictionalRender from './components/CondictionalRender';
 import ReceiveProperties from './components/ReceiveProperties';
 import DestructProperties from './components/DestructProperties';
 import ListIterated from './components/ListIterated';
+import FragmentExample from './components/FragmentExample';
 
 function App() {
 
@@ -37,6 +38,7 @@ function App() {
         <DestructProperties name='John' age={30} title='Software Architect'/>
         <DestructProperties name='Tomas' age={40} title='Software Developer'/>
         <ListIterated people={employees}/>
+        <FragmentExample/>
     </div>
   );
 }
