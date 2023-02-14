@@ -14,6 +14,7 @@ import DestructProperties from './components/DestructProperties';
 import ListIterated from './components/ListIterated';
 import FragmentExample from './components/FragmentExample';
 import WrapComponent from './components/WrapComponent';
+import FunctionParams from './components/FunctionParams';
 
 function App() {
 
@@ -22,6 +23,10 @@ function App() {
     {name:'Amanda', age: 30, title: "Developer Pl"},
     {name:'Judith', age: 35, title: "Developer Sr"},
   ];
+
+  function showMessage(message){
+    console.log(message);
+  }
 
   return (
     <div className="App">
@@ -44,6 +49,7 @@ function App() {
           <h2>Information 1</h2>
           <h2>Information 2</h2>
         </WrapComponent>
+        <FunctionParams func={showMessage}/>
     </div>
   );
 }
