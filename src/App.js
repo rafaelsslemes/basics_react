@@ -17,6 +17,7 @@ import WrapComponent from './components/WrapComponent';
 import FunctionParams from './components/FunctionParams';
 import { useState } from 'react';
 import StateLift from './components/StateLift';
+import CSSInComponent from './components/CSSInComponent';
 
 function App() {
 
@@ -60,6 +61,7 @@ function App() {
         <FunctionParams func={showMessage}/>
         <div style={{backgroundColor: color}}><br/>Teste<br/></div>
         <StateLift func={handleColor}/>
+        <CSSInComponent/>
     </div>
   );
 }

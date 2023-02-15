@@ -1,0 +1,9 @@
+/* WRONG! This overrides Global Styles */
+/* h1 {
+    color: green;
+} */
+
+
+.comp-header {
+    color: green;
+} 
