@@ -15,6 +15,8 @@ import ListIterated from './components/ListIterated';
 import FragmentExample from './components/FragmentExample';
 import WrapComponent from './components/WrapComponent';
 import FunctionParams from './components/FunctionParams';
+import { useState } from 'react';
+import StateLift from './components/StateLift';
 
 function App() {
 
@@ -26,6 +28,12 @@ function App() {
 
   function showMessage(message){
     console.log(message);
+  }
+
+  const [color, setColor] = useState('green');
+
+  const handleColor = (color) => {
+    setColor(color);
   }
 
   return (
@@ -50,6 +58,8 @@ function App() {
           <h2>Information 2</h2>
         </WrapComponent>
         <FunctionParams func={showMessage}/>
+        <div style={{backgroundColor: color}}><br/>Teste<br/></div>
+        <StateLift func={handleColor}/>
     </div>
   );
 }
