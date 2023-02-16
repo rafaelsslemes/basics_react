@@ -12,7 +12,7 @@ const n = 12;
         <p style={{color:'pink', padding: '25px,', borderTop:'10px solid red',}}>
             CSS Inline Here
         </p>
-        <p style={n < 10 ? ({color:'purple'}) : ({color:'blue'})}>
+        <p style={n < 10 ? {color:'purple'} : {color:'blue'}}>
         Dynamic CSS Inline Here
         </p>
     </div>
