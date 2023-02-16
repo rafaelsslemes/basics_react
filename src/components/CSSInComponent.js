@@ -1,5 +1,6 @@
 import React from 'react'
-import "./CSSInComponent.css";
+import './CSSInComponent.css';
+import styles from './CSSInComponent.module.css';
 
 const CSSInComponent = () => {
 
@@ -23,6 +24,14 @@ const alert = false;
 
         <p className={alert ? 'red-title' : 'yellow-title'}>
         Dynamic CSS Class Here
+        </p>
+
+        <p className={styles.scoped_css}>
+        Scoped Module CSS Class Here
+        </p>
+
+        <p className={styles['scoped_css']}>
+        Scoped Module CSS Class Here Too
         </p>
     </div>
   )
