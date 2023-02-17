@@ -45,8 +45,8 @@ function App() {
         <TemplateExpressions/>
         <ChildComponent/>
         <EventClick/>
-        <img src='/instagram.png' alt='Image at Public Folder' />
-        <img src={whatsappImg} alt='Image at Assets Folder' />
+        <img src='/instagram.png' alt='at Public Folder' />
+        <img src={whatsappImg} alt='at Assets Folder' />
         <DataByHook/>
         <ListRender/>
         <CondictionalRender/>
