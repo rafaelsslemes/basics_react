@@ -7,6 +7,7 @@ const FormSample = ({user}) => {
     const [name, setName] = useState(user ? user.name : '');
     const [email, setEmail] = useState(user ? user.email : '');
     const [info, setInfo] = useState(user ? user.info : '');
+    const [profile, setProfile] = useState(user ? user.profile : '');
 
     const handleChangeName = (event) => {
         setName(event.target.value);
@@ -20,11 +21,13 @@ const FormSample = ({user}) => {
         console.log(name);
         console.log(email);
         console.log(info);
+        console.log(profile);
 
         // Clean inputs
         setName('');
         setEmail('');
         setInfo('');
+        setProfile('');
     }
 
 
@@ -48,6 +51,18 @@ const FormSample = ({user}) => {
                 <textarea name='info' placeholder='Tell us about you'
                     value={info}
                     onChange={(event) => setInfo(event.target.value)}/>
+            </label>
+
+            <label>
+                <span>Profile type:</span>
+                <select name='profile'
+                    value={profile}
+                    onChange={(event) => setProfile(event.target.value)}>
+                
+                    <option value='admin'>Administrator</option>
+                    <option value='personal'>Personal</option>
+                    <option value='partner'>Partner</option>
+                </select>
             </label>
             
             <input type='submit' value='Send'/>
