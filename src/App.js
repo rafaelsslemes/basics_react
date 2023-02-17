@@ -19,6 +19,7 @@ import { useState } from 'react';
 import StateLift from './components/StateLift';
 import CSSInComponent from './components/CSSInComponent';
 import FormSample from './components/FormSample';
+import HttpRequest from './components/HttpRequest';
 
 function App() {
 
@@ -66,6 +67,17 @@ function App() {
         <StateLift func={handleColor}/>
         <CSSInComponent/>
         <FormSample user={user}/>
+
+
+        <div style={{backgroundColor: 'black'}}>
+            <br/>
+            <h1 style={{color: 'white', fontSize:30, textAlign:'center'}}>
+              HTTP Requests Section (Rest API)
+            </h1>
+            <br/>
+        </div>
+        <HttpRequest/>
+
     </div>
   );
 }
