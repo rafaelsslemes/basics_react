@@ -18,6 +18,7 @@ import FunctionParams from './components/FunctionParams';
 import { useState } from 'react';
 import StateLift from './components/StateLift';
 import CSSInComponent from './components/CSSInComponent';
+import FormSample from './components/FormSample';
 
 function App() {
 
@@ -62,6 +63,7 @@ function App() {
         <div style={{backgroundColor: color}}><br/>Teste<br/></div>
         <StateLift func={handleColor}/>
         <CSSInComponent/>
+        <FormSample />
     </div>
   );
 }
