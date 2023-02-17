@@ -38,6 +38,8 @@ function App() {
     setColor(color);
   }
 
+  const user = { name: 'Josh', email : 'josh@mail.com'};
+
   return (
     <div className="App">
         <h1>Welcome React</h1>
@@ -63,7 +65,7 @@ function App() {
         <div style={{backgroundColor: color}}><br/>Teste<br/></div>
         <StateLift func={handleColor}/>
         <CSSInComponent/>
-        <FormSample />
+        <FormSample user={user}/>
     </div>
   );
 }
