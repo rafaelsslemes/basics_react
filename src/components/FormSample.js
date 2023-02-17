@@ -10,12 +10,19 @@ const FormSample = () => {
         setName(event.target.value);
     }
 
-    console.log(name);
-    console.log(email)
+    const handleSubmit = (event) => {
+        // Dismiss page redirection
+        event.preventDefault();
+        
+        console.log('Send data');
+        console.log(name);
+        console.log(email)
+    }
+
 
   return (
     <div>
-        <form>
+        <form onSubmit={handleSubmit}>
             <label htmlFor='name'>Name:</label>
             <input type='text' name='name' placeholder='Type your name' 
             onChange={handleChangeName}/>
