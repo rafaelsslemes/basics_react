@@ -18,6 +18,10 @@ const FormSample = ({user}) => {
         console.log('Send data');
         console.log(name);
         console.log(email)
+
+        // Clean inputs
+        setName('');
+        setEmail('');
     }
 
 
