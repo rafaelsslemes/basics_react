@@ -11,16 +11,19 @@ const FormSample = () => {
     }
 
     console.log(name);
+    console.log(email)
 
   return (
     <div>
         <form>
             <label htmlFor='name'>Name:</label>
-            <input type='text' name='name' placeholder='Type your name' onChange={handleChangeName}/>
+            <input type='text' name='name' placeholder='Type your name' 
+            onChange={handleChangeName}/>
 
             <label>
                 <span>Email:</span>
-                <input type='text' name='email' placeholder='Type your email'/>
+                <input type='text' name='email' placeholder='Type your email'
+                onChange={(event) => setEmail(event.target.value)}/>
             </label>
             
             <input type='submit' value='Send'/>
