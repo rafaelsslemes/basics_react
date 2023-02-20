@@ -39,6 +39,13 @@ const HttpRequest = () => {
                 body: JSON.stringify(product)
             },
         );
+        
+        // Update available data, dismiss a reload of colection
+        const added = await response.json();
+        setProducts((prevList)=> [...prevList, added]);
+
+        setName('');
+        setPrice('');
     }
 
     return (
@@ -49,7 +56,7 @@ const HttpRequest = () => {
             <ul>
                 {products.map((product)=>(
                     <li key={product.id}>
-                        {product.name} 'R$' {product.price}
+                        {product.name} R$ {product.price}
                     </li>
                 ))}
             </ul>
