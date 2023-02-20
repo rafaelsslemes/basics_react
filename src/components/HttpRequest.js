@@ -7,6 +7,8 @@ const HttpRequest = () => {
     const backendURL = "http://localhost:3000/products";
 
     const [products, setProducts] = useState([]);
+    const [name, setName] = useState("");
+    const [price, setPrice] = useState("");
 
     // Get Data from RestAPI
     // useEffect prevents void rerenders
@@ -20,7 +22,24 @@ const HttpRequest = () => {
         fetchData();
     }, [])
 
-    console.log(products);
+    // console.log(products);
+
+    async function handleSubmit(event){
+        event.preventDefault();
+
+        // Auto creates an object with keys and values from useState
+        const product = {
+            name, price
+        }
+
+        const response = await fetch(backendURL, 
+            {
+                method: 'POST',
+                headers:{'Content-Type':'application/json'},
+                body: JSON.stringify(product)
+            },
+        );
+    }
 
     return (
         <div>
@@ -33,9 +52,28 @@ const HttpRequest = () => {
                         {product.name} 'R$' {product.price}
                     </li>
                 ))}
-            </ul>    
+            </ul>
+
+            <div className='add-product'>
+                <h2>Add Product</h2>
+                <form onSubmit={handleSubmit}>
+                    <label>Name:
+                        <input type='text' name='name' value={name} 
+                            onChange={(e)=>setName(e.target.value)}>
+                        </input>
+                    </label>
+                    <label>Price:
+                        <input type='text' name='price' value={price} 
+                            onChange={(e)=>setPrice(e.target.value)}>
+                        </input>
+                    </label>
+                    <input type='submit' value="Register"/>
+                </form>
+
+            </div>    
 
         </div>
+
     )
 }
 
