@@ -1,6 +1,7 @@
 import { prettyDOM } from '@testing-library/react';
 import React from 'react'
 import { useState, useEffect } from 'react'
+import { useFetch } from '../hooks/useFetch';
 
 const HttpRequest = () => {
 
@@ -11,16 +12,20 @@ const HttpRequest = () => {
     const [price, setPrice] = useState("");
 
     // Get Data from RestAPI
-    // useEffect prevents void rerenders
-    useEffect(() => {
+    const {data : items} = useFetch(backendURL); // 'a:b' syntax rename const
+    
+    // Replaced by custom Hook useFetch
 
-        async function fetchData(){
-            const response = await fetch(backendURL);
-            const data = await response.json();
-            setProducts(data);
-        }
-        fetchData();
-    }, [])
+    // useEffect prevents void rerenders
+    // useEffect(() => {
+
+    //     async function fetchData(){
+    //         const response = await fetch(backendURL);
+    //         const data = await response.json();
+    //         setProducts(data);
+    //     }
+    //     fetchData();
+    // }, [])
 
     // console.log(products);
 
@@ -54,7 +59,7 @@ const HttpRequest = () => {
                 Product List
             </h2>
             <ul>
-                {products.map((product)=>(
+                {items && items.map((product)=>(
                     <li key={product.id}>
                         {product.name} R$ {product.price}
                     </li>
