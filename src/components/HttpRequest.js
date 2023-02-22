@@ -16,7 +16,7 @@ const HttpRequest = () => {
     // Get Data from RestAPI
     const {data : items} = useFetch(backendURL, reload); // 'a:b' syntax rename const
 
-    const { httpConfig } = usePut(backendURL);
+    const { httpConfig, loading } = usePut(backendURL);
     
     // Replaced by custom Hook useFetch
 
@@ -55,8 +55,8 @@ const HttpRequest = () => {
         // setProducts((prevList)=> [...prevList, added]);
 
                 
-        httpConfig(product, 'POST');
         setReload(!reload);
+        httpConfig(product, 'POST');
 
         setName('');
         setPrice('');
@@ -67,6 +67,7 @@ const HttpRequest = () => {
             <h2>
                 Product List
             </h2>
+            {loading && <h3>Loading products...</h3>}
             <ul>
                 {items && items.map((product)=>(
                     <li key={product.id}>
