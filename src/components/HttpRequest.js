@@ -14,9 +14,9 @@ const HttpRequest = () => {
     const [reload, setReload] = useState(false);
 
     // Get Data from RestAPI
-    const {data : items} = useFetch(backendURL, reload); // 'a:b' syntax rename const
+    const {data : items, loading, errorMsg} = useFetch(backendURL, reload); // 'a:b' syntax rename const
 
-    const { httpConfig, loading } = usePut(backendURL);
+    const { httpConfig } = usePut(backendURL);
     
     // Replaced by custom Hook useFetch
 
@@ -68,14 +68,16 @@ const HttpRequest = () => {
                 Product List
             </h2>
             {loading && <h3>Loading products...</h3>}
-            <ul>
-                {items && items.map((product)=>(
+            {errorMsg && <h3>{errorMsg}</h3>}
+            {!errorMsg &&  
+                <ul>
+                    {items && items.map((product)=>(
                     <li key={product.id}>
                         {product.name} R$ {product.price}
                     </li>
                 ))}
-            </ul>
-
+            </ul>}
+           
             <div className='add-product'>
                 <h2>Add Product</h2>
                 <form onSubmit={handleSubmit}>

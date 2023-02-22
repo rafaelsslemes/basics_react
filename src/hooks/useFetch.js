@@ -6,16 +6,21 @@ export const useFetch = (url, reload) => {
 
     // Used to show progress in view
     const [loading, setLoading] = useState(false);
+    const [errorMsg, setErrorMsg] = useState(null);
+
 
     useEffect(()=>{
 
         const fetchData = async () => {
             setLoading(true);
 
-            const response = await fetch(url);
-            const json = await response.json();
-            
-            setData(json);
+            try {
+                const response = await fetch(url);
+                const json = await response.json();
+                setData(json);
+            } catch {
+                setErrorMsg('An error ocurried when fetch data');
+            }
 
             setLoading(false);
         };
@@ -24,5 +29,5 @@ export const useFetch = (url, reload) => {
     
     }, [url, reload]);
 
-    return {data, loading};
+    return {data, loading, errorMsg};
 };
