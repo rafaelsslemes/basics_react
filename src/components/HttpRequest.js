@@ -1,7 +1,8 @@
-import { prettyDOM } from '@testing-library/react';
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { useFetch } from '../hooks/useFetch';
+import { usePut } from '../hooks/usePut';
+
 
 const HttpRequest = () => {
 
@@ -10,9 +11,12 @@ const HttpRequest = () => {
     const [products, setProducts] = useState([]);
     const [name, setName] = useState("");
     const [price, setPrice] = useState("");
+    const [reload, setReload] = useState(false);
 
     // Get Data from RestAPI
-    const {data : items} = useFetch(backendURL); // 'a:b' syntax rename const
+    const {data : items} = useFetch(backendURL, reload); // 'a:b' syntax rename const
+
+    const { httpConfig } = usePut(backendURL);
     
     // Replaced by custom Hook useFetch
 
@@ -37,17 +41,22 @@ const HttpRequest = () => {
             name, price
         }
 
-        const response = await fetch(backendURL, 
-            {
-                method: 'POST',
-                headers:{'Content-Type':'application/json'},
-                body: JSON.stringify(product)
-            },
-        );
+        // Replaced by custom Hook usePut
+        // const response = await fetch(backendURL, 
+        //     {
+        //         method: 'POST',
+        //         headers:{'Content-Type':'application/json'},
+        //         body: JSON.stringify(product)
+        //     },
+        // );
         
-        // Update available data, dismiss a reload of colection
-        const added = await response.json();
-        setProducts((prevList)=> [...prevList, added]);
+        // // Update available data, dismiss a reload of colection
+        // const added = await response.json();
+        // setProducts((prevList)=> [...prevList, added]);
+
+                
+        httpConfig(product, 'POST');
+        setReload(!reload);
 
         setName('');
         setPrice('');
